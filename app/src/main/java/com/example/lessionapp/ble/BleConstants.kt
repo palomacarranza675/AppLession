@@ -1,0 +1,23 @@
+package com.example.lessionapp.ble
+
+import java.util.UUID
+
+object BleConstants {
+    const val TARGET_DEVICE_NAME = "ESP32 LESSION"
+    val SERVICE_UUID: UUID = UUID.fromString("6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
+    val TX_CHAR_UUID: UUID = UUID.fromString("6E400003-B5A3-F393-E0A9-E50E24DCCA9E")
+    val RX_CHAR_UUID: UUID = UUID.fromString("6E400002-B5A3-F393-E0A9-E50E24DCCA9E")
+    val CCCD_UUID: UUID = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb")
+}
+
+enum class BleConnectionState {
+    DISCONNECTED,
+    SCANNING,
+    DEVICE_FOUND,
+    CONNECTING,
+    CONNECTED,
+    DISCOVERING_SERVICES,
+    CONFIGURING_NOTIFICATIONS,
+    READY,
+    ERROR
+}
